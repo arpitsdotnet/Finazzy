@@ -1,0 +1,6 @@
+@Finazzy.WebApi_HostAddress = http://localhost:5153
+
+GET {{Finazzy.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
