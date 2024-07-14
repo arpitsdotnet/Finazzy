@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace Finazzy.User.Domain.Tests.Unit
+namespace Finazzy.Users.Domain.Tests.Unit
 {
     public class UnitTest1
     {

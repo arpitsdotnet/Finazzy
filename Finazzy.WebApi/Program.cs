@@ -1,6 +1,6 @@
-using Finazzy.User.Application;
-using Finazzy.User.Infrastructure;
-using Finazzy.User.Presentation;
+using Finazzy.Users.Application;
+using Finazzy.Users.Infrastructure;
+using Finazzy.Users.Presentation;
 using Serilog;
 
 namespace Finazzy.WebApi

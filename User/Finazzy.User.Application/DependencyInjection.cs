@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Finazzy.User.Application
+namespace Finazzy.Users.Application
 {
     public static class DependencyInjection
     {

@@ -16,9 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\User\Finazzy.User.Application\Finazzy.User.Application.csproj" />
-    <ProjectReference Include="..\User\Finazzy.User.Infrastructure\Finazzy.User.Infrastructure.csproj" />
-    <ProjectReference Include="..\User\Finazzy.User.Presentation\Finazzy.User.Presentation.csproj" />
+    <ProjectReference Include="..\User\Finazzy.User.Application\Finazzy.Users.Application.csproj" />
+    <ProjectReference Include="..\User\Finazzy.User.Infrastructure\Finazzy.Users.Infrastructure.csproj" />
+    <ProjectReference Include="..\User\Finazzy.User.Presentation\Finazzy.Users.Presentation.csproj" />
   </ItemGroup>
 
 </Project>

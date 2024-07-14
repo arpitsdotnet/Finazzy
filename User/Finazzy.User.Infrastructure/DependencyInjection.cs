@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace Finazzy.User.Infrastructure
+namespace Finazzy.Users.Infrastructure
 {
     public static class DependencyInjection
     {
