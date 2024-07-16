@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0EE24E63-E47A-4FB7-ADD5-2DFE18E24314}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "User", "User", "{33EB0B66-E785-401C-913F-0E58754A7C90}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Users", "Users", "{33EB0B66-E785-401C-913F-0E58754A7C90}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Company", "Company", "{A51F2F80-F55B-4CF2-BB66-A0E9CAACAE9D}"
 EndProject
@@ -15,16 +15,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chat", "Chat", "{6F0B068A-6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payment", "Payment", "{0FEFF3C3-A188-4C39-A70E-828BFDD96099}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finazzy.Users.Application", "User\Finazzy.User.Application\Finazzy.Users.Application.csproj", "{7F366CC2-A25F-4E08-AF5C-6F0754E3F5D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finazzy.Users.Application", "Users\Finazzy.Users.Application\Finazzy.Users.Application.csproj", "{7F366CC2-A25F-4E08-AF5C-6F0754E3F5D4}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B7166436-0F26-4C78-BD4F-5760B5AD0B7D} = {B7166436-0F26-4C78-BD4F-5760B5AD0B7D}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finazzy.Users.Domain", "User\Finazzy.User.Domain\Finazzy.Users.Domain.csproj", "{B7166436-0F26-4C78-BD4F-5760B5AD0B7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finazzy.Users.Domain", "Users\Finazzy.Users.Domain\Finazzy.Users.Domain.csproj", "{B7166436-0F26-4C78-BD4F-5760B5AD0B7D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finazzy.Users.Infrastructure", "User\Finazzy.User.Infrastructure\Finazzy.Users.Infrastructure.csproj", "{DA685AE8-4405-48C7-915D-8A7FF168A93D}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finazzy.Users.Persistence", "User\Finazzy.User.Persistence\Finazzy.Users.Persistence.csproj", "{573F8283-10B5-4EF6-9527-CC40281B65C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finazzy.Users.Infrastructure", "Users\Finazzy.Users.Infrastructure\Finazzy.Users.Infrastructure.csproj", "{DA685AE8-4405-48C7-915D-8A7FF168A93D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finazzy.Project.Application", "Project\Finazzy.Project.Application\Finazzy.Project.Application.csproj", "{B0CAC996-023D-4A1E-99D7-479715B9FF6A}"
 EndProject
@@ -94,7 +92,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finazzy.Project.Domain.Test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finazzy.User.Domain.Tests.Unit", "tests\User\Finazzy.User.Domain.Tests.Unit\Finazzy.User.Domain.Tests.Unit.csproj", "{98A992EC-8811-4914-88C3-4F1F1EE14216}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finazzy.Users.Presentation", "User\Finazzy.User.Presentation\Finazzy.Users.Presentation.csproj", "{98D5C1B8-424A-4FD4-9100-5DF3EAABCF3B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finazzy.Users.Presentation", "Users\Finazzy.Users.Presentation\Finazzy.Users.Presentation.csproj", "{98D5C1B8-424A-4FD4-9100-5DF3EAABCF3B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finazzy.WebApi", "Finazzy.WebApi\Finazzy.WebApi.csproj", "{FE1A458D-4FD8-4D92-997A-58C261E2D1DB}"
 EndProject

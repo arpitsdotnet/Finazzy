@@ -1,47 +1,32 @@
-using Finazzy.Users.Application;
 using Finazzy.Users.Infrastructure;
-using Finazzy.Users.Presentation;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 
-namespace Finazzy.WebApi
+namespace Finazzy.WebApi;
+
+public class Program
 {
-    public class Program
+    public static async Task Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
+        var webHost = CreateHostBuilder(args).Build();
 
-            // Add services to the container.
-            builder.Services.AddAuthorization();
+        await ApplyMigrations(webHost.Services);
 
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-
-            builder.Services
-                .AddUserApplication()
-                .AddUserInfrastructure()
-                .AddUserPresentation();
-
-            builder.Host.UseSerilog((context, configuration) =>
-                configuration.ReadFrom.Configuration(context.Configuration));
-
-            var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-
-            app.UseSerilogRequestLogging();
-
-            app.UseHttpsRedirection();
-
-            app.UseAuthorization();
-
-            app.Run();
-        }
+        await webHost.RunAsync();
     }
+
+    private static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .UseSerilog((context, configuration) => configuration.ReadFrom.Configuration(context.Configuration))
+            .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());
+
+    private static async Task ApplyMigrations(IServiceProvider serviceProvider)
+    {
+        using var scope = serviceProvider.CreateScope();
+
+        await using var dbContext = scope.ServiceProvider.GetRequiredService<UserApplicationDbContext>();
+
+        await dbContext.Database.MigrateAsync();
+    }
+
 }
