@@ -2,9 +2,9 @@
 
 namespace Finazzy.Users.Domain.Exceptions.Base;
 
-public class NotFoundException : Exception
+public class NotMatchedException : Exception
 {
-    public NotFoundException(string message) 
+    public NotMatchedException(string message) 
         : base(message)
     {
     }

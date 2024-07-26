@@ -1,11 +1,6 @@
-﻿using System;
-using System.Linq;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using System.Text.Json;
 using Finazzy.Users.Application.Exceptions;
 using Finazzy.Users.Domain.Exceptions.Base;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
 
 namespace Finazzy.WebApi.Middleware;
 

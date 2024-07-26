@@ -7,7 +7,7 @@ using Finazzy.Users.Domain.Exceptions;
 
 namespace Finazzy.Users.Application.UserQueries.Queries.GetUserById;
 
-internal class GetUserQueryHandler(IDbConnection dbConnection) : IQueryHandler<GetUserByIdQuery, UserResponse>
+internal class GetUserByIdQueryHandler(IDbConnection dbConnection) : IQueryHandler<GetUserByIdQuery, UserResponse>
 {
     private readonly IDbConnection _dbConnection = dbConnection;
 
