@@ -8,7 +8,7 @@ using MediatR;
 
 namespace Finazzy.Users.Application.UserQueries.Commands.CreateUser;
 
-public sealed class CreateUserCommandHandler : ICommandHandler<CreateUserCommand, Guid>
+public sealed class CreateUserCommandHandler : ICommandHandler<CreateUserCommand, Result<Guid>>
 {
     private readonly IUserRepository _userRepository;
     private readonly IUnitOfWork _unitOfWork;
@@ -21,12 +21,12 @@ public sealed class CreateUserCommandHandler : ICommandHandler<CreateUserCommand
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<Guid> Handle(CreateUserCommand request, CancellationToken cancellationToken)
+    public async Task<Result<Guid>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
     {
         var existingUser = _userRepository.GetByUsername(request.Username);
         if (existingUser != null)
         {
-            return Guid.Empty;
+            return Result<Guid>.Failure(CreateUserErrors.AlreadyExists);
         }
 
         var user = User.Create(request.Username, request.Password);

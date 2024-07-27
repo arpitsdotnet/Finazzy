@@ -22,8 +22,7 @@ public sealed class User : Entity
     public string Username { get; private set; }
     public string Password { get; private set; }
     public DateTime RegisteredOn { get; private set; } = DateTime.Now;
-    public bool IsActive { get; private set; } = true;
-
+    
     public static User Create(string username, string password) =>
         new User(Guid.NewGuid(), username, password);
 

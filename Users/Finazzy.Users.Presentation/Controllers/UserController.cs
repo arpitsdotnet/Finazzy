@@ -39,8 +39,16 @@ public sealed class UserController : ApiController
     {
         var command = request.Adapt<CreateUserCommand>();
 
-        var userId = await Sender.Send(command, cancellationToken);
+        var result = await Sender.Send(command, cancellationToken);
 
-        return CreatedAtAction(nameof(CreateUser),new { userId }, userId);
+        return result.IsSuccess
+            ? CreatedAtAction(nameof(CreateUser), new { UserId = result.Data }, result.Data)
+            : new ObjectResult(new ProblemDetails
+            {
+                Status = StatusCodes.Status409Conflict,
+                Type = "https://tools.ietf.org/html/rcf7231#Section-6.5.1",
+                Title = result.Error.Code,
+                Detail = result.Error.Description
+            });
     }
 }

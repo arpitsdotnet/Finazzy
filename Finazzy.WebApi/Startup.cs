@@ -20,6 +20,8 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
+        services.AddProblemDetails();
+
         // Add services to the container.
         services.AddAuthorization();
 
@@ -52,6 +54,7 @@ public class Startup
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
+
         if (env.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
