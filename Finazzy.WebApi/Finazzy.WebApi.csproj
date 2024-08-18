@@ -26,15 +26,16 @@
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
     <PackageReference Include="Microsoft.OpenApi" Version="1.6.15" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.20.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.3" />
     <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     <PackageReference Include="System.Text.Json" Version="8.0.4" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Users\Finazzy.Users.Application\Finazzy.Users.Application.csproj" />
-    <ProjectReference Include="..\Users\Finazzy.Users.Infrastructure\Finazzy.Users.Infrastructure.csproj" />
-    <ProjectReference Include="..\Users\Finazzy.Users.Presentation\Finazzy.Users.Presentation.csproj" />
+    <ProjectReference Include="..\Finazzy.Application\Finazzy.Application.csproj" />
+    <ProjectReference Include="..\Finazzy.Infrastructure\Finazzy.Infrastructure.csproj" />
+    <ProjectReference Include="..\Finazzy.Presentation\Finazzy.Presentation.csproj" />
   </ItemGroup>
 
 </Project>

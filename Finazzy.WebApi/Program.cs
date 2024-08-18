@@ -1,4 +1,4 @@
-using Finazzy.Users.Infrastructure;
+using Finazzy.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -24,7 +24,7 @@ public class Program
     {
         using var scope = serviceProvider.CreateScope();
 
-        await using var dbContext = scope.ServiceProvider.GetRequiredService<UserApplicationDbContext>();
+        await using var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
         await dbContext.Database.MigrateAsync();
     }

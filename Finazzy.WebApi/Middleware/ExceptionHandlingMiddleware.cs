@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
-using Finazzy.Users.Application.Exceptions;
-using Finazzy.Users.Domain.Exceptions.Base;
+using Finazzy.Application.Exceptions;
+using Finazzy.Domain.Exceptions.Base;
 
 namespace Finazzy.WebApi.Middleware;
 
@@ -32,6 +32,7 @@ public sealed class ExceptionHandlingMiddleware : IMiddleware
         {
             BadRequestException or ValidationException => StatusCodes.Status400BadRequest,
             NotFoundException => StatusCodes.Status404NotFound,
+            NotMatchedException => StatusCodes.Status409Conflict,
             _ => StatusCodes.Status500InternalServerError
         };
 

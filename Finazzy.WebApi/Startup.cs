@@ -1,10 +1,11 @@
 ﻿using System.Data;
-using Finazzy.Users.Application;
-using Finazzy.Users.Application.Behaviors;
-using Finazzy.Users.Domain.Abstractions;
-using Finazzy.Users.Infrastructure;
-using Finazzy.Users.Infrastructure.Repositories;
-using Finazzy.Users.Presentation;
+using Finazzy.Application;
+using Finazzy.Application.Behaviors;
+using Finazzy.Domain.Abstractions.Base;
+using Finazzy.Domain.Abstractions.Users;
+using Finazzy.Infrastructure;
+using Finazzy.Infrastructure.Repositories.Users;
+using Finazzy.Presentation;
 using Finazzy.WebApi.Middleware;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -32,22 +33,22 @@ public class Startup
         services.AddControllers();
 
         services
-            .AddUserApplication()
-            .AddUserInfrastructure()
-            .AddUserPresentation();
+            .AddApplication()
+            .AddInfrastructure()
+            .AddPresentation();
 
-        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(UserValidationBehavior<,>));
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(UserRegistrationValidationBehavior<,>));
 
-        services.AddDbContext<UserApplicationDbContext>(builder =>
+        services.AddDbContext<ApplicationDbContext>(builder =>
             builder.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
 
-        services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IUserRegistrationRepository, UserRegistrationRepository>();
 
         services.AddScoped<IUnitOfWork>(
-            factory => factory.GetRequiredService<UserApplicationDbContext>());
+            factory => factory.GetRequiredService<ApplicationDbContext>());
 
         services.AddScoped<IDbConnection>(
-            factory => factory.GetRequiredService<UserApplicationDbContext>().Database.GetDbConnection());
+            factory => factory.GetRequiredService<ApplicationDbContext>().Database.GetDbConnection());
 
         services.AddTransient<ExceptionHandlingMiddleware>();
     }

@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Chats\" />
+    <Folder Include="Features\Companies\" />
+    <Folder Include="Features\Employees\" />
+    <Folder Include="Features\Leads\" />
+    <Folder Include="Features\Payments\" />
+    <Folder Include="Features\Projects\" />
+    <Folder Include="Features\Receipts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.0.4" />
+    <PackageReference Include="MediatR" Version="12.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Finazzy.Domain\Finazzy.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
